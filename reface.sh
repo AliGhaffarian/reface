@@ -56,8 +56,8 @@ decide_target(){
 	
 	host_to_become="$(echo $target | cut -f2 -d' ')	$(echo $target | cut -f3 -d' ')"
 	#export host_to_become=$host_to_become
-	export target_ip=$(echo $host_to_become | cut -f1 -d' ' )
-	export target_mac=$(echo $host_to_become | cut -f2 -d' ' )
+	target_ip=$(echo $host_to_become | cut -f1 -d' ' )
+	target_mac=$(echo $host_to_become | cut -f2 -d' ' )
 }
 
 decide_network(){
@@ -92,7 +92,7 @@ decide_network(){
 	then
 		echo chose $network_to_scan
 	fi
-	export network_to_scan=$network_to_scan	
+	network_to_scan=$network_to_scan	
 }
 
 scan(){
@@ -158,10 +158,10 @@ handle_flags(){
 	do
 		if [ "$arg" == "-v" ]
 		then
-			export verbose_flag=1
+			verbose_flag=1
 		elif [ "$arg" == "-r" ]
 		then
-			export delete_flag=1
+			delete_flag=1
 		else
 			echo -e $help_str
 			exit 0
@@ -189,11 +189,11 @@ decide_device(){
 		echo chose $dev
 	fi
 
-	export dev=$dev
+	dev=$dev
 }
 
-export verbose_flag=0
-export delete_flag=0
+verbose_flag=0
+delete_flag=0
 handle_flags $@
 
 
