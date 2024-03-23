@@ -134,7 +134,7 @@ decode_xml(){
 	then
 		echo decoding $file_to_decode file storing to $default_nmap_txt
 	fi
-	python3 bin/decoder.py > $default_nmap_txt
+	python3 bin/decoder.py | grep -v "Routerboard.com" > $default_nmap_txt
 }
 
 delete_temps(){
