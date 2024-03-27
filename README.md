@@ -1,2 +1,4 @@
 # reface
-scans the network using nmap - generates an xml output - decodes it and formats the data - shows for you to select which active ip,mac you want to use 
+Ip and MAC spoofing tool
+
+this tool automates the process of scanning the network ( using nmap ) and using ip and MAC of other present devices in the LAN 
