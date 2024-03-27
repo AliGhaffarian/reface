@@ -1,4 +1,4 @@
 # reface
-Ip and MAC spoofing tool
+IP and MAC spoofing tool
 
-this tool automates the process of scanning the network ( using nmap ) and using ip and MAC of other present devices in the LAN 
+this tool automates the process of scanning the network ( using nmap ) and using IP and MAC of other present devices in the LAN ( using ifconfig ) 
