@@ -1,5 +1,6 @@
 #!/bin/bash
-#need to get all functions to respect the verbose flag
+#main file
+#TODO : need to get all functions to respect the verbose flag
 
 default_nmap_xml="nmap_scan.xml"
 default_nmap_txt="nmap_report.txt"
@@ -44,7 +45,7 @@ decide_target(){
 			echo chose $target
 		fi
 	else
-		echo $choice_type file wasn\'t found enter a file name or a [q]uit
+		echo $choice_type file wasn\'t found enter a file name or [q]uit
 		read filename
 		if [ "$filename" == "q" -o "$filename" == "quit" ]; then
 			echo bye

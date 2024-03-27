@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#prints up interaces on device if -a is not passes only interfaces with ip address
 no_carrier_filter=
 if [ $# -ne 0 -a "$1" == "-a" ]
 then

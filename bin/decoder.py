@@ -1,6 +1,6 @@
 #!/bin/python3
 from xml.dom import minidom
-
+#this files takes a nmap xml output and makes a list of discovered devices that we discovered MAC for
 
 #None if there isnt both layer 2 and 3 addresses ipv4/6'\t'mac address'\t'vendor if there is
 #gonna put the addresses to the following ipv4,ipv6 mac
