@@ -38,6 +38,8 @@ def output_str(addresses)->str:
         return output_string
     return None
 
+def is_not_mac_or_excluded(address):
+    return address.getAttribute("addrtype") != "mac"
 
 
 try:
@@ -46,13 +48,21 @@ except:
     print("nmap_scan.xml not found")
     exit(1)
 
-models = file.getElementsByTagName('hosthint')
+addresses = file.getElementsByTagName('address')
 
-for model in models:
-    
-    address = model.getElementsByTagName('address')
-    hostname = model.getElementsByTagName('hostnames')
-    
-    formatted_addr = output_str(address)
-    if( formatted_addr != None):
-        print(formatted_addr) 
+i = 0
+while( i < len(addresses)):
+    try:
+        if(is_not_mac_or_excluded(addresses[i])):
+            i += 1
+            continue
+    except:
+        break
+        
+    print(addresses[i].getAttribute("addr") + "\t"\
+            + addresses[ i + 1 ].getAttribute("addr") + "\t"\
+            + addresses[ i + 1 ].getAttribute("vendor"))
+    i += 2
+
+#formatted_addr = output_str(address)
+

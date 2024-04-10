@@ -108,7 +108,7 @@ scan(){
 		redirect_dest=1
 	fi
 	
-	nmap_command="sudo nmap $1 -Pn -oX $default_nmap_xml $network_to_scan"
+	nmap_command="sudo nmap $1 -sn -oX $default_nmap_xml $network_to_scan"
 	
 	#debug
 	echo "$nmap_command >&$redirect_dest"
