@@ -59,9 +59,9 @@ while( i < len(addresses)):
     except:
         break
         
-    print(addresses[i].getAttribute("addr") + "\t"\
-            + addresses[ i + 1 ].getAttribute("addr") + "\t"\
-            + addresses[ i + 1 ].getAttribute("vendor"))
+    print(addresses[i + 1].getAttribute("addr") + "\t"\
+            + addresses[ i ].getAttribute("addr") + "\t"\
+            + addresses[ i ].getAttribute("vendor"))
     i += 2
 
 #formatted_addr = output_str(address)
